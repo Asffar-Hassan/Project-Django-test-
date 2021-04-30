@@ -1,5 +1,5 @@
 from django.db import models
-test test test test 
+
 # Create your models here.
     
 class Categories(models.Model):
@@ -14,7 +14,7 @@ class Gamme(models.Model):
 class Product(models.Model):
     Nom_prod=models.CharField(max_length=20)
     Prix=models.IntegerField()
-    #img=models.ImageField(upload_to='')
+    img=models.ImageField(null=True,blank=True,upload_to='images/')
     Desc_prod=models.CharField(max_length=100)
     nbr_stock=models.IntegerField()
     id_cat=models.ForeignKey(Categories,on_delete=models.CASCADE)
